@@ -1,0 +1,44 @@
+cabal-version:       2.4
+name:                chip8
+-- PVP summary:      +-+------- breaking API changes
+--                   | | +----- non-breaking API additions
+--                   | | | +--- code changes with no API change
+version:             0.1.0.0
+-- synopsis:
+-- description:
+-- bug-reports:
+license:             MIT
+license-file:        LICENSE
+author:              Mapa
+maintainer:          
+category:            Game
+extra-source-files:  CHANGELOG.md
+
+library
+  -- Modules exported by the library.
+  exposed-modules:     Chip8, Chip8.Internal
+  other-modules:       Chip8.ROM, Chip8.Types
+  -- other-extensions:
+  build-depends:       base ^>=4.13.0.0, array, lens, containers, random, bytestring
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+  ghc-options: 
+    -O3
+
+executable chip8
+  main-is:             Main.hs
+  other-modules:       Types
+  -- other-extensions:
+  build-depends:       base ^>=4.13.0.0, chip8, sdl2, linear, lens, bytestring, array, time, containers
+  hs-source-dirs:      app
+  default-language:    Haskell2010
+  ghc-options: 
+    -O3
+
+test-suite chip8-test
+  default-language:    Haskell2010
+  -- The interface type and version of the test suite.
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Chip8Test.hs
+  build-depends:       base ^>=4.13.0.0, chip8, hspec, array, bytestring, lens

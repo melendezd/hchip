@@ -1,0 +1,57 @@
+Test suite chip8-test: RUNNING...
+
+Chip8.ROM.currentOp
+  gets the instruction at PC=0x200
+  gets the instruction at PC=0x202
+  gets the instruction at PC=0x212
+Chip8.ROM.readOp
+  reads LDi
+  reads CALL
+Chip8.ROM.loadROM
+  load a ROM into memory
+CLS
+  clears the screen
+RET
+  sets the PC to addr at top of stack
+  pops the address from the top of stack
+JP
+  sets the PC to the specified address
+CALL
+  sets the PC to the specified address
+  pushes the PC to the top of the stack
+SEi
+  skips when equal
+  doesn't skip when not equal
+SNEi
+  skips when not equal
+  doesn't skip when equal
+SE
+  skips when equal
+  doesn't skip when not equal
+LDi
+  sets the register
+ADDi
+  adds to the register
+LD
+  loads into register
+OR
+  computes OR correctly
+AND
+  computes AND correctly
+XOR
+  computes XOR correctly
+ADD
+  computes ADD carry correctly
+SUB
+  computes SUB correctly
+  computes SUB no borrow correctly
+  computes SUB borrow correctly
+LDB
+  works
+LDRI
+  works
+
+Finished in 0.0012 seconds
+30 examples, 0 failures
+Test suite chip8-test: PASS
+Test suite logged to: /home/mapa/projects/haskell/chip8/dist-newstyle/build/x86_64-linux/ghc-8.8.4/chip8-0.1.0.0/t/chip8-test/test/chip8-0.1.0.0-chip8-test.log
